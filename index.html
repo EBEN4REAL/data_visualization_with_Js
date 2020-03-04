@@ -18,6 +18,11 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+  <!--  ZIG CHARTS -->
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+
 </head>
 <body>
 	 <div id="app">
@@ -96,7 +101,9 @@
       </div>
       <div class="col-md-9">
         <div class="right_top__div">
-
+            <div id="oceanCharts" class="chart--container">
+              
+            </div>
         </div>
         <div class="right_bottom__div">
 
@@ -371,6 +378,120 @@ Highcharts.chart('scatteredPlotsChartsDiv', {
             [170.2, 62.3], [177.8, 82.7], [179.1, 79.1], [190.5, 98.2], [177.8, 84.1],
             [180.3, 83.2], [180.3, 83.2]]
     }]
+});
+
+
+
+// {% comment %} OCEAN CHARTS  {% endcomment %}
+// CHART CONFIG
+// -----------------------------
+let chartConfig = {
+  type: 'range',
+  backgroundColor: '#ffffff',
+  guide: {
+    marker: {
+      type: 'triangle',
+      size: '7px'
+    },
+    plotLabel: {
+      text: '<span style="color:%color">%t</span><span style="color:%color"> Min: %node-min-value  Max: %node-max-value</span> ',
+      backgroundColor: '#000',
+      borderRadius: '5px',
+      fontColor: '#FFF',
+      fontSize: '15px',
+      headerText: '%kt'
+    }
+  },
+  title: {
+    text: 'Average Temperature',
+    backgroundColor: '#ffffff',
+    fontColor: '#000'
+  },
+  legend: {
+    align: 'center',
+    backgroundColor: '#e0e0e0',
+    borderColor: '#fff',
+    layout: 'x4',
+    shadow: false,
+    verticalAlign: 'bottom'
+  },
+  plot: {
+    alphaArea: 1,
+    aspect: 'spline',
+    hoverState: {
+      backgroundColor: 'none'
+    },
+    lineWidth: '0px',
+    marker: {
+      visible: false
+    }
+  },
+  scaleX: {
+    guide: {
+      alpha: 1,
+      lineStyle: 'solid',
+      lineWidth: '1px'
+    },
+    item: {
+      offsetX: '0px',
+      textAlign: 'left'
+    },
+    label: {
+      text: 'Year'
+    },
+    labels: ['01/2015', '01/2016', '01/2017', '01/2018', '01/2019', '01/2020'],
+    lineWidth: '1px',
+    tick: {
+      lineWidth: '1px',
+      placement: 'outer',
+      size: '10px'
+    }
+  },
+  scaleY: {
+    label: {
+      text: 'Celsius'
+    },
+    lineWidth: '1px',
+    tick: {
+      lineWidth: '1px'
+    }
+  },
+  tooltip: {
+    visible: false
+  },
+  series: [
+    {
+      text: 'Pacific Ocean',
+      values: [[5, 12], [2, 10], [6, 14], [4, 14], [5, 16], [6, 15]],
+      backgroundColor: '#0ce9d1',
+      lineColor: '#0ce9d1'
+    },
+    {
+      text: 'Atlantic Ocean',
+      values: [[6, 10], [4, 6], [7, 13], [6, 12], [8, 14], [6, 14]],
+      backgroundColor: '#e7ffcc',
+      lineColor: '#e7ffcc'
+    },
+    {
+      text: 'Southern Ocean',
+      values: [[7, 8], [4, 6], [8, 9], [6, 12], [9, 12], [6, 14]],
+      backgroundColor: '#ccfff9',
+      lineColor: '#ccfff9'
+    },
+    {
+      text: 'Indian Ocean',
+      values: [[7, 8], [4, 5], [8, 9], [6, 8], [9, 11], [9, 13]],
+      backgroundColor: '#8bdceb',
+      lineColor: '#8bdceb'
+    }
+  ]
+}
+
+// RENDER CHARTS
+// -----------------------------
+zingchart.render({
+  id: 'oceanCharts',
+  data: chartConfig,
 });
 
 </script>
