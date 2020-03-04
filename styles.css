@@ -1,7 +1,9 @@
 .input__div {
   border: 1px solid #4dd3e0d9;
   border-radius: 12px;
-  min-height: 68px;
+  min-height: 35px;
+  /* display: flex;
+  align-items: center; */
 }
 .topics__div {
   width: 90%;
@@ -47,4 +49,29 @@
 input{
   border: none;
   outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+/* .activeTopic {
+  background: 
+} */
+
+.right_bottom__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex__div_1 {
+  flex: 0 0 25%;
+}
+.blog__text {
+  color: #adb5bd;
+  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.active__topic {
+    background: #007bff30;
 }

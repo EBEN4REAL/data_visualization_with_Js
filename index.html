@@ -33,21 +33,18 @@
           <div class="topics__div pt-3">
              <h6 class="topics__div">Topics</h6>
 
-             <div class="input__div mt-4">
-               <div class="row align-items-center" style="height: 100%;">
-                 <div class="col-md-2 ml-3">
-                   <i class="fa fa-search" aria-hidden="true" style="color:#4dd3e0d9"></i>
+             <div class="input__div mt-4 ">
+               <div class="row align-items-center mt-1" style="height: 100%;">
+                 <div class="col-md-1 ">
+                   <i class="fa fa-search ml-1" aria-hidden="true" style="color:#4dd3e0d9"></i>
                  </div>
-                 <div class="col-md-7">
+                 <div class="col-md-10">
                    <input type="search"  placeholder="Search"/>
-                 </div>
-                  <div class="col-md-1">
-                   <i class="fa fa-close" aria-hidden="true" style="color:#4dd3e0d9"></i>
                  </div>
                </div>
              </div>
-             <div class="input__div mt-4">
-               <div class="row align-items-center" style="height: 100%;">
+             <div class="input__div mt-4 active__topic topic__1">
+               <div class="row align-items-center mt-1" style="height: 100%;">
                  <div class="col-md-10">
                    <h6 class="ml-3">Topic 1</h6>
                  </div>
@@ -56,8 +53,8 @@
                  </div>
                </div>
              </div>
-             <div class="input__div mt-4">
-               <div class="row align-items-center" style="height: 100%;">
+             <div class="input__div mt-4 topic__2">
+               <div class="row align-items-center mt-1" style="height: 100%;">
                  <div class="col-md-10">
                    <h6 class="ml-3">Topic 2</h6>
                  </div>
@@ -66,8 +63,8 @@
                  </div>
                </div>
              </div>
-             <div class="input__div mt-4">
-               <div class="row align-items-center" style="height: 100%;">
+             <div class="input__div mt-4 topic__3">
+               <div class="row align-items-center mt-1" style="height: 100%;">
                  <div class="col-md-10">
                    <h6 class="ml-3">Topic 3</h6>
                  </div>
@@ -76,8 +73,8 @@
                  </div>
                </div>
              </div>
-            <div class="input__div mt-4">
-               <div class="row align-items-center" style="height: 100%;">
+            <div class="input__div mt-4 topic__4">
+               <div class="row align-items-center mt-1" style="height: 100%;">
                  <div class="col-md-10">
                    <h6 class="ml-3">Topic 4</h6>
                  </div>
@@ -86,8 +83,8 @@
                  </div>
                </div>
              </div>
-             <div class="input__div mt-4">
-               <div class="row align-items-center" style="height: 100%;">
+             <div class="input__div mt-4 topic__5">
+               <div class="row align-items-center mt-1" style="height: 100%;">
                  <div class="col-md-10">
                    <h6 class="ml-3">Topic 5</h6>
                  </div>
@@ -105,8 +102,19 @@
               
             </div>
         </div>
-        <div class="right_bottom__div">
-
+         <div class="right_bottom__div">
+              <div class="flex__div_1">
+                  <h3 class="blog__text ml-3">Blog Distribution <br> <span style="font-size:40px;color:#474c50"> 95%</span></h3>
+              </div>
+               <div class="flex__div_1">
+                  <h3 class="blog__text">Bloggers  Mentioned <br> <span style="font-size:40px;color:#474c50"> 20</span></h3>
+              </div>
+               <div class="flex__div_1">
+                  <h3 class="blog__text">Posts Mentioned <br><span style="font-size:40px;color:#474c50"> 400</span></h3>
+              </div>
+               <div class="flex__div_1">
+                  <h3 class="blog__text">Top Posting  Mentioned <br><span style="font-size:40px;color:#474c50"> United States</span> </h3>
+              </div>
         </div>
       </div>
     </div>
@@ -132,7 +140,8 @@
       </div>
     </div>
   </div>
-
+<script type="text/javascript" src="https://www.viralpatel.net/demo/jquery/jquery.shorten.1.0.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <!-- Chart code -->
 <script>
 am4core.ready(function() {
@@ -493,6 +502,97 @@ zingchart.render({
   id: 'oceanCharts',
   data: chartConfig,
 });
+
+
+
+
+
+let activeTopic = 1 ;
+
+let topic__1 = document.querySelector('.topic__1');
+let topic__2 = document.querySelector('.topic__2');
+let topic__3 = document.querySelector('.topic__3');
+let topic__4 = document.querySelector('.topic__4');
+let topic__5 = document.querySelector('.topic__5');
+
+
+topic__1.addEventListener("click", () => {
+  topic__1.classList.add('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.remove('active__topic');
+});
+
+topic__2.addEventListener("click", () => {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.add('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.remove('active__topic');
+});
+
+topic__3.addEventListener("click", () => {
+   topic__1.classList.remove('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.add('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.remove('active__topic');
+});
+
+topic__4.addEventListener("click", () => {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.add('active__topic');
+  topic__5.classList.remove('active__topic');
+});
+
+topic__5.addEventListener("click", () => {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.add('active__topic');
+});
+
+
+if(activeTopic === 1) {
+  topic__1.classList.add('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.remove('active__topic');
+}
+if(activeTopic === 2) {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.add('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.remove('active__topic');
+}
+if(activeTopic === 3) {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.add('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.remove('active__topic');
+}
+if(activeTopic === 4) {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.add('active__topic');
+  topic__5.classList.remove('active__topic');
+}
+if(activeTopic === 5) {
+  topic__1.classList.remove('active__topic');
+  topic__2.classList.remove('active__topic');
+  topic__3.classList.remove('active__topic');
+  topic__4.classList.remove('active__topic');
+  topic__5.classList.add('active__topic');
+}
+
 
 </script>
 </body>
